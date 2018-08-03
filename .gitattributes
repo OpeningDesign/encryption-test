@@ -1,2 +1,3 @@
 secretfile filter=git-crypt diff=git-crypt
 *.encoded filter=git-crypt diff=git-crypt
+encrypredfolder/* filter=git-crypt diff=git-crypt
