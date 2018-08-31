@@ -42,7 +42,7 @@ If you are cloning an existing encrypted repo:
 - Push
 
 
-#### To unlock a repo with a 'collatoration' key:
+#### To unlock a repo with a 'collaboration' key:
 - Open a command window at the repo folder
   - One method: Navigate to the project folder, hold down the Shift key and right-click the folder. The context menu will contain an entry, ‘Open command window here.”
 - `./git-crypt.exe unlock C:\path\to\{filename}.gpg`
