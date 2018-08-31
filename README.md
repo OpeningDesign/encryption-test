@@ -42,10 +42,10 @@ If you are cloning an existing encrypted repo:
 - Push
 
 
-#### If you are cloning an existing encrypted repo:
-
-- If you are already added as a pgp user, nothing to do
-- If you have the symmetric key: `./git-crypt.exe unlock C:\path\to\{filename}.gpg`
+#### To unlock a repo with a 'collatoration' key:
+- Open a command window at the repo folder
+  - One method: Navigate to the project folder, hold down the Shift key and right-click the folder. The context menu will contain an entry, ‘Open command window here.”
+- `./git-crypt.exe unlock C:\path\to\{filename}.gpg`
 
 
 **Warning** any file committed before it has been added to .gitattributes will not be encrypted
