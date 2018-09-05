@@ -23,15 +23,12 @@ If you are cloning an existing encrypted repo:
 
 #### If you are creating the repo:
 
-- Install [Git](https://git-scm.com/download/win)
-<!--- Optionally, install git-crypt.exe system-wide by copying into one of the Windows system folders or adding its path to the [system path](https://www.addictivetips.com/windows-tips/set-path-environment-variables-in-windows-10/)-->
-- Clone or init a git repo
 - download [git-crypt.exe](https://github.com/LykkeCity/git-crypt/releases) and locate the file in the repo folder
 - Open a command window at the repo folder
   - One method: Navigate to the project folder, hold down the Shift key and right-click the folder. The context menu will contain an entry, ‘Open command window here.”
 - `./git-crypt init`
 - Create a `.gitattributes` file (This file is where you give instructions on which files/folders will be encrypted)
-  - One method:  Download and locate [this](https://raw.githubusercontent.com/OpeningDesign/New_2nd_Story/master/_CLOSED_New_2nd_Story/.gitattributes) in the folder you would like to be encrypted.  All subfolders will be encrypted as well.
+  - One method:  Download and locate [this file](https://raw.githubusercontent.com/OpeningDesign/New_2nd_Story/master/_CLOSED_New_2nd_Story/.gitattributes) in the folder you would like to be encrypted.  All subfolders will be encrypted as well.
 - Adding users or creating a 'collaboration' key.
   - Either...
     - add your pgp user `./git-crypt add-gpg-user your_pgp_email@somethingg.com` or 
@@ -43,9 +40,11 @@ If you are cloning an existing encrypted repo:
 
 
 #### To unlock a repo with a 'collaboration' key:
+- Your collaborator has given you {filename}.gpg file.  Store somewhere safe.  Remember the file's path, for steps below.
 - Open a command window at the repo folder
   - One method: Navigate to the project folder, hold down the Shift key and right-click the folder. The context menu will contain an entry, ‘Open command window here.”
-- `./git-crypt.exe unlock C:\path\to\{filename}.gpg`
+- `./git-crypt.exe unlock C:\path\to\{filename}.gpg
+- All encrypted file/folders should be accessible now.
 
 
 **Warning** any file committed before it has been added to .gitattributes will not be encrypted
