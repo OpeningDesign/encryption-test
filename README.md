@@ -43,7 +43,7 @@ If you are cloning an existing encrypted repo:
 - Your collaborator has given you {filename}.gpg file.  Store somewhere safe.  Remember the file's path, for steps below.
 - Open a command window at the repo folder
   - One method: Navigate to the project folder, hold down the Shift key and right-click the folder. The context menu will contain an entry, ‘Git Bash Here”
-- `./git-crypt.exe unlock C:/path/to/{filename}.gpg
+- `./git-crypt.exe unlock C:/path/to/{filename}.gpg`
 - All encrypted file/folders should be accessible now.
 
 
