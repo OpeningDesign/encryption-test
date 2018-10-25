@@ -31,12 +31,28 @@ If you are cloning an existing encrypted repo:
   - One method:  Download and locate [this file](https://raw.githubusercontent.com/OpeningDesign/New_2nd_Story/master/_CLOSED_New_2nd_Story/.gitattributes) in the folder you would like to be encrypted.  All subfolders will be encrypted as well.
 - Adding users or creating a 'collaboration' key.
   - Either...
-    - add your pgp user `./git-crypt add-gpg-user your_pgp_email@somethingg.com` or 
-    - export a symmetric key `./git-crypt export-key C:/path/to/{filename}.gpg`
+    - add your pgp user `./git-crypt add-gpg-user your_pgp_email@something.com` or
+	    - You might have to get the user's public key and add them to the gpg keyring first
+		    - Adding key
+			    - Obtain the public key of the person you'd like to collaborate with.  It will be a .txt, .gpg or .asc file. *(they are all the same common text file, just with different extensions).*
+			    - `gpg --import C:/path/to/filename`
+		    - Set trust level
+			    - `gpg --edit-key your_pgp_email@something.com`
+			    - `gpg> trust`
+				    -   1 = I don't know or won't say
+	  			    -   2 = I do NOT trust
+	  			    -   3 = I trust marginally
+	  			    -   4 = I trust fully
+	  			    -   5 = I trust ultimately
+	  			    -   m = back to the main menu
+			    - Your decision? `5`
+			    - Do you really want to set this key to ultimate trust? (y/N) `y`
+			    - gpg> `q`
+			    - 	Push to remote repo
+    - export a symmetric key `./git-crypt export-key C:/path/to/filename.gpg`
       - Share this key with fellow collaborators
       - Save in a safe location
-  - Add other pgp users if needed (you must have their public key)
-- Push
+	- Push to remote repo
 
 
 #### To unlock a repo with a 'collaboration' key:
