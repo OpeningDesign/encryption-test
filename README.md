@@ -10,7 +10,7 @@ If you are creating the repo:
 - Clone or init a git repo
 - Create a .gitattribute file where you specify what must be encrypted
 - Either add your pgp user `git crypt add-gpg-user your_pgp_email@somethingg.com` or export a symmetric key `git crypt export-key /path/to/keyfile`
-- Add other pgp users if needed (you must have their public key)
+- Add other pgp users if needed (you must have their public key and they need trust level 5 - see below)
 - Push
 
 If you are cloning an existing encrypted repo:
