@@ -29,6 +29,7 @@ If you are cloning an existing encrypted repo:
 - `./git-crypt init`
 - Create a `.gitattributes` file (This file is where you give instructions on which files/folders will be encrypted)
   - One method:  Download and locate [this file](https://raw.githubusercontent.com/OpeningDesign/New_2nd_Story/master/_CLOSED_New_2nd_Story/.gitattributes) in the folder you would like to be encrypted.  All subfolders will be encrypted as well.
+  - **Warning** any file committed before it has been added to .gitattributes will not be encrypted
 - Adding users or creating a 'collaboration' key.
   - Either...
     - add your pgp user `./git-crypt add-gpg-user your_pgp_email@something.com` or
@@ -62,5 +63,8 @@ If you are cloning an existing encrypted repo:
 - `./git-crypt.exe unlock C:/path/to/filename.gpg`
 - All encrypted file/folders should be accessible now.
 
+#### To see a list of Collaborators already associated with the repo
+- `git log .git-crypt/`
 
-**Warning** any file committed before it has been added to .gitattributes will not be encrypted
+
+
