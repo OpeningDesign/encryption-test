@@ -15,7 +15,7 @@ If you are creating the repo:
 
 If you are cloning an existing encrypted repo:
 
-- If you are already added as a pgp user, nothing to do
+- If you are already added as a pgp user: `git crypt unlock`
 - If you have the symmetric key: `git crypt unlock /path/to/keyfile`
 
 ### Windows
