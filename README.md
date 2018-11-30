@@ -1,6 +1,6 @@
 This repo is a test for encryption. It contains one clear file (this one) and a couple of encrypted ones. It uses [git-crypt](https://www.agwa.name/projects/git-crypt/)
 
-Basic procedure:
+## Working with git crypt
 
 ### Linux
 
@@ -66,5 +66,28 @@ If you are cloning an existing encrypted repo:
 #### To see a list of Collaborators already associated with the repo
 - `git log .git-crypt/`
 
+## Working with PGP keys
 
+A PGP key is made of two keys: One private/secret, that you should NEVER give to anyone, and one public, that you can give to as many people as you want or even make publicly available (on your website, in your email signature, etc). 
 
+Each key of the pair can decrypt what the other encrypted. So other people who have your public key can read encrypted files/text that you and only you issued (and therefore certify that what they are reading can only have been made by you), and they can also send you text/files that only you can read, by encrypting them with your public key.
+
+Once you generated a key pair, both can be exported to .asc files, and these files can be imported on other machines (cellphones, other computers) to be able to encrypt/decript with the same keys. It is also important to keep a backup of those two files otherwise what has been encrypted with any of them is lost forever.
+
+Remeber that like any encryption system, although pgp encryption is unbreakable right now, one day, nobody can tell when,  it will become breakable and the content you encrypt today will become readable.
+
+### Linux
+
+#### Creating a key for yourself
+
+* Install gpg from your distro repo
+* Open a terminal
+* `gpg --full-generate-key` and accept all the defaults: RSA/RSA,3072 bits, 0 - never expire
+* Give your name, your email (a pgp key is bound to an email), and optionally a comment
+* `gpg --list-keys` lists all the keys installed for your user. Check that your new key is there
+* If you need to give your public key to other people, export your public key as an .asc file: `gpg --armor --export you@server.com > /home/youruser/my_public_key.asc`
+* It is a good idea to backup both your public and private asc files. Generate another one for your private key with `gpg --armor --export-secret-keys regisndetene@gmail.com > /home/youruser/my_private_key.asc`
+
+#### Adding PGP keys of other people
+
+`gpg --import /path/to/some_key.asc`
