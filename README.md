@@ -25,7 +25,7 @@ If you are cloning an existing encrypted repo:
 
 - download [git-crypt.exe](https://github.com/LykkeCity/git-crypt/releases) and locate the file in the repo folder
 - Open a command window at the repo folder
-  - One method: Navigate to the project folder, hold down the Shift key and right-click the folder. The context menu will contain an entry, ‘Open command window here.”
+  - One method: Navigate to the project folder, hold down the Shift key and right-click the folder. The context menu will contain an entry, ‘Open PowerShell window here'.
 - `./git-crypt init`
 - Create a `.gitattributes` file (This file is where you give instructions on which files/folders will be encrypted)
   - One method:  Download and locate [this file](https://raw.githubusercontent.com/OpeningDesign/New_2nd_Story/master/_CLOSED_New_2nd_Story/.gitattributes) in the folder you would like to be encrypted.  All subfolders will be encrypted as well.
@@ -59,7 +59,7 @@ If you are cloning an existing encrypted repo:
 #### To unlock a repo with a 'collaboration' key:
 - Your collaborator has given you {filename}.gpg file.  Store somewhere safe.  Remember the file's path, for steps below.
 - Open a command window at the repo folder (top most level -- that is no subdirectiories)
-  - One method: Navigate to the project folder, hold down the Shift key and right-click the folder. The context menu will contain an entry, ‘Git Bash Here”
+  - One method: Navigate to the project folder, hold down the Shift key and right-click the folder. The context menu will contain an entry, ‘Open PowerShell window here'.
 - `./git-crypt.exe unlock C:/path/to/filename.gpg`
 - All encrypted file/folders should be accessible now.
 
