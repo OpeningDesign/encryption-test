@@ -1,5 +1,7 @@
 This repo is a test for encryption. It contains one clear file (this one) and a couple of encrypted ones. It uses [git-crypt](https://www.agwa.name/projects/git-crypt/)
 
+Make sure you read he git-crypt readme before working with encryption, as there are several details important to know (ie. some files won't be encrypted unless you do it properly)
+
 ## Working with git crypt
 
 ### Linux
