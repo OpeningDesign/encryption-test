@@ -20,7 +20,6 @@ If you are cloning an existing encrypted repo:
 
 ### Windows
 
-
 #### If you are creating the repo:
 
 - download [git-crypt.exe](https://github.com/LykkeCity/git-crypt/releases) and locate the file in the repo folder
@@ -91,3 +90,12 @@ Remeber that like any encryption system, although pgp encryption is unbreakable 
 #### Adding PGP keys of other people
 
 `gpg --import /path/to/some_key.asc`
+
+### Windows
+
+* Install gpg for windows from https://www.gpg4win.org/
+* This will install gpg and a keys management application called Kleopatra
+* After install, run Kleopatra
+* Create a new pair of keys
+* Backup both the private and the public keys (in Kleopatra the private key is called "key", and the public one "certificate") as .asc files.
+* Send the public .asc file to whoever needs it
