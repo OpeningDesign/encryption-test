@@ -56,6 +56,9 @@ If you are cloning an existing encrypted repo:
       - Save in a safe location
 	- Push to remote repo
 
+#### To unlock with a personal key (assumes you have this installed on your local machine)
+- Linux: git-crypt unlock
+- Windows: ./git-crypt unlock
 
 #### To unlock a repo with a 'collaboration' key:
 - Your collaborator has given you {filename}.gpg file.  Store somewhere safe.  Remember the file's path, for steps below.
