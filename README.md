@@ -66,7 +66,7 @@ Assumes you have your pgp key correctly configured on your local machine (see be
 has been added to the crypted repo already
 
 - Linux: `git crypt unlock`
-- Windows: `git-crypt unlock`
+- Windows: `./git-crypt unlock`
 
 #### To unlock a repo with a symmtric (or 'collaboration') key:
 
