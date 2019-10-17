@@ -1,12 +1,17 @@
 This repo is a test for encryption. It contains one clear file (this one) and a couple of encrypted ones. It uses [git-crypt](https://www.agwa.name/projects/git-crypt/)
 
+
 Make sure you read he [git-crypt readme](https://github.com/AGWA/git-crypt) before working with encryption, as there are several details important to know (ie. some files won't be encrypted unless you do it properly)
+
 
 ## Working with git crypt
 
+
 ### Linux
 
+
 If you are creating the repo:
+
 
 - Install git-crypt from your distro repo
 - Clone or init a git repo
@@ -16,16 +21,22 @@ If you are creating the repo:
 - Add other pgp users if needed (you must have their public key and they need trust level 5 - see below)
 - Push
 
+
 If you are cloning an existing encrypted repo:
+
 
 - If you are already added as a pgp user: `git crypt unlock`
 - If you have the symmetric key: `git crypt unlock /path/to/keyfile`
 
+
 Note that when installing git-crypt, you get a program named git-crypt, and also the command "crypt" is added to git. So you can either use "git crypt" (the git command) or "git-crypt" (the git-crypt program)
+
 
 ### Windows
 
+
 #### If you are creating the repo:
+
 
 - download [git-crypt.exe](https://github.com/LykkeCity/git-crypt/releases) and locate the file in the repo folder. Placing the git-crypt.exe program in the repo folder is not absolutely necessary, but it's convenient, because then when you launch a terminal directly inside the repo folder, git-crypt will be found immediately without the need to type its full path
 - Open a command window at the repo folder
@@ -60,15 +71,30 @@ Note that when installing git-crypt, you get a program named git-crypt, and also
       - Save in a safe location
 	- Push to remote repo
 
+
 #### To unlock with a personal key
+
 
 Assumes you have your pgp key correctly configured on your local machine (see below) and your pgp key
 has been added to the crypted repo already
 
+
 - Linux: `git crypt unlock`
 - Windows: `./git-crypt unlock`
 
+	- If Powershell
+		- One method: Navigate to the project folder, hold down the Shift key and right-click the folder. The context menu will contain an entry, ‘Open PowerShell window here'.
+			- then `./git-crypt unlock`
+	- If GitBash
+		- `./git-crypt unlock`
+			- if *Error: no GPG secret key available to unlock this repository.*
+				- then `gpg --import <path to private key file>`
+					- then `./git-crypt unlock`
+
+
+
 #### To unlock a repo with a symmtric (or 'collaboration') key:
+
 
 - Your collaborator has given you a {filename}.gpg file.  Store somewhere safe.  Remember the file's path, for steps below.
 - Open a command window at the repo folder (top most level -- that is no subdirectiories)
@@ -76,27 +102,39 @@ has been added to the crypted repo already
 - `./git-crypt.exe unlock C:/path/to/filename.gpg`
 - All encrypted file/folders should be accessible now.
 
+
 #### To see a list of Collaborators already associated with the repo
+
 
 - `git log .git-crypt/`
 
+
 ## Working with PGP keys
+
 
 A PGP key is made of two keys: One private/secret, that you should NEVER give to anyone, and one public, that you can give to as many people as you want or even make publicly available (on your website, in your email signature, etc). 
 
+
 Each key of the pair can decrypt what the other encrypted. So other people who have your public key can read encrypted files/text that you and only you issued (and therefore certify that what they are reading can only have been made by you, this is also called signing), and they can also send you text/files that only you can read, by encrypting them with your public key (so only your private key can decrypt it)
+
 
 Once you generated a key pair, both can be exported to .asc files, and these files can be imported on other machines (cellphones, other computers) to be able to encrypt/decript with the same keys. It is also important to keep a backup of those two files otherwise if you loose them what has been encrypted with any of them is lost forever.
 
+
 You can make as many keys as you want for yourself, but you can also make only one and use on any other computer or operating system or application where you need pgp keys. Just be careful where you place your private key, any application or server that can access it will be able to read secret messages sent to you and send messages as if they were signed by you.
+
 
 Remeber that like any encryption system, although pgp encryption is unbreakable right now, one day, nobody can tell when,  it will become breakable and the content you encrypt today will become readable.
 
+
 **Note** pgp stands for 'pretty good privacy' which is the official protocol, gpg stands for 'GNU pgp' (they love those brain twisters at GNU) which is GNU's (open-source) version of the pgp protocol. It's confusing but it usually refers to the same thing. To resume, gpg is an open-source program that produces and manages pgp keys.
+
 
 ### Linux
 
+
 #### Creating a key for yourself
+
 
 * Install gpg from your distro repo
 * Open a terminal
@@ -106,15 +144,21 @@ Remeber that like any encryption system, although pgp encryption is unbreakable 
 * If you need to give your public key to other people, export your public key as an .asc file: `gpg --armor --export you@server.com > /home/youruser/my_public_key.asc`
 * It is a good idea to backup both your public and private asc files. Generate another one for your private key with `gpg --armor --export-secret-keys yourname@gmail.com > /home/youruser/my_private_key.asc`
 
+
 Note that .asc is a simple text file, you can also export as .txt or .pgp
+
 
 #### Adding PGP keys of other people
 
+
 `gpg --import /path/to/some_key.asc`
+
 
 If you are going to use that key to add the person to git-crypt, you need to raise their trust level first (see above)
 
+
 ### Windows
+
 
 * Install gpg for windows from https://www.gpg4win.org/
 * This will install gpg and a keys management application called Kleopatra
@@ -123,33 +167,24 @@ If you are going to use that key to add the person to git-crypt, you need to rai
 * Backup both the private and the public keys (in Kleopatra the private key is called "key", and the public one "certificate") as .asc files.
 * Send the public .asc file to whoever needs it
 
-#### Chopinregis (regis) - What works for my Windows 10 system
 
-How to Unlock a crypted repo on Windows with a private key pgp key
 
-1. On windows download Git client from https://gitforwindows.org/ This will install the bash terminal for windows, if you already have git installed there is no need to redownload and re-install.
 
-2. Copy your private key file into the folder to be unlocked. Private key usually end with .asc as file extension, for example your private key could look like this 'privatekey.asc'
-
-3. Go to the folder to unlock from the git bash terminal by right clicking on the selected folder and select 'git bash here'
-
-4. in the bash terminal type ./git-crypt unlock
-
-5. paste your password and waith a few seconds. And your file should be unlocked with your private key and it's password. 
-
-6. Now delete your private key that was copied into the folder to unlock. So as to avoid uploading the private key mistakenly. 
-
-and that's it.
 
 #### More notes on working with pgp keys and git-crypt on Windows
 
+
 When you install Git for Windows and use the "git bash here" right-click option, you get an actual Linux terminal (bash is a linux terminal interpreter, ported to windows). So you can use most of the linux commands listed on this page. For example, `gpg --list-keys` useful to check that your pgp key has correctly been added by Kleopatra and will be found by git-crypt. 
+
 
 If it isn't there, you can add it manually with `gpg --import /path/to/some_key.asc`, using the path to your own key saved by Kleopatra. Note that in the bash terminal, directory separators must be linux-style (/) instead of windows-style (\)
 
+
 ### Adding more emails to an existing pgp key
 
+
 pgp keys can be bound to more than one email.You can add more emails to your existing key: https://help.github.com/en/articles/associating-an-email-with-your-gpg-key:
+
 
  - `gpg --list-secret-keys --keyid-format LONG` (check your key ID)
  - `gpg --edit-key 3AA5C34371567BD2` (you can also use your email address insteadof the key ID)
@@ -157,3 +192,6 @@ pgp keys can be bound to more than one email.You can add more emails to your exi
  - Fill in name, email, comments, Press Okay
  - Type 0 to exit
  - Save your key file again: `gpg --armor --export 3AA5C34371567BD2`
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTE3OTMzODcwNV19
+-->
