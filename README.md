@@ -192,6 +192,7 @@ pgp keys can be bound to more than one email.You can add more emails to your exi
  - Fill in name, email, comments, Press Okay
  - Type 0 to exit
  - Save your key file again: `gpg --armor --export 3AA5C34371567BD2`
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE3OTMzODcwNV19
--->
+
+### Creating a Keyring
+- `gpg --no-default-keyring --keyring <NAMEOFKEYRING.gpg> --fingerprint`
+- `gpg --no-default-keyring --keyring <NAMEOFKEYRING.gpg> --import <path to key file>`
