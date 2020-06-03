@@ -108,6 +108,8 @@ has been added to the crypted repo already
 
 - `git log .git-crypt/`
 
+#### To see which files are encrypted in the repo
+- `./git-crypt status`
 
 ## Working with PGP keys
 
