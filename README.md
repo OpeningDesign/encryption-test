@@ -141,7 +141,7 @@ If you are going to use that key to add the person to git-crypt, you need to rai
   * **Make a Backup Of Your Key Pair...**
     * Save this .asc file elsewhere.  This is your private key.  Don't share with anyone.
   * To share your public key with others, right click on your name/email in the list of key and go to **Export..** You can share this file with your collaborators.  If in doubt, open this file in a text editor, and it should say something like **-----BEGIN PGP PUBLIC KEY BLOCK-----**
-    * ![](imgs\export_keys.png)
+    * ![](imgs/export_keys.png)
   * You can also **Export Secret Keys**... but again don't share this with anyone.  If in doubt open the file in a text editors, and it should say something like **-----BEGIN PGP PRIVATE KEY BLOCK-----**
 
 #### More notes on working with pgp keys and git-crypt on Windows
