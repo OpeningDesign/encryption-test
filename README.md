@@ -54,7 +54,7 @@ Note that when installing git-crypt, you get a program named git-crypt, and also
           - Your decision? `5`
           - Do you really want to set this key to ultimate trust? (y/N) `y`
           - gpg> `q`
-          -  Push to remote repo
+          - Push to remote repo
     - export a symmetric key `./git-crypt export-key C:/path/to/filename.gpg`
       - Share this key with fellow collaborators
       - Save in a safe location
@@ -160,6 +160,14 @@ pgp keys can be bound to more than one email.You can add more emails to your exi
 - Fill in name, email, comments, Press Okay
 - Type 0 to exit
 - Save your key file again: `gpg --armor --export 3AA5C34371567BD2`
+
+### ### Expired Keys
+
+- delete the old key in ```/.git-crypt/keys/default/0/``` folder
+
+- add the user again.  The new key should have the same email address as the old key
+
+
 
 ### Creating a Keyring
 
