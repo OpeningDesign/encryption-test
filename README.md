@@ -128,9 +128,11 @@ Note that .asc is a simple text file, you can also export as .txt or .pgp
 
 If you are going to use that key to add the person to git-crypt, you need to raise their trust level first (see above)
 
-### Windows
+### Windows - Creating New GPG Keys with Kleopatra
 
 * Install gpg for windows from https://www.gpg4win.org/. This will install gpg and a keys management application called Kleopatra
+  * Run as an adminstrator
+    * ![](imgs\admin_gpg4win.png)
 * After install, run Kleopatra
 * Create a new pair of keys
   * File --> New Key Pair...
@@ -167,9 +169,11 @@ pgp keys can be bound to more than one email.You can add more emails to your exi
 
 - add the user again.  The new key should have the same email address as the old key
 
-
-
 ### Creating a Keyring
 
 - `gpg --no-default-keyring --keyring <NAMEOFKEYRING.gpg> --fingerprint`
 - `gpg --no-default-keyring --keyring <NAMEOFKEYRING.gpg> --import <path to key file>`
+  
+  <!--stackedit_data:
+  eyJoaXN0b3J5IjpbMTg3Njk4NjI2OF19
+  -->
