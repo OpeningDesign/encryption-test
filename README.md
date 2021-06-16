@@ -132,7 +132,7 @@ If you are going to use that key to add the person to git-crypt, you need to rai
 
 * Install gpg for windows from https://www.gpg4win.org/. This will install gpg and a keys management application called Kleopatra
   * Run as an adminstrator
-    * ![](imgs\admin_gpg4win.png)
+    * ![](imgs/admin_gpg4win.png)
 * After install, run Kleopatra
 * Create a new pair of keys
   * File --> New Key Pair...
