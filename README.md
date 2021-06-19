@@ -62,23 +62,30 @@ Note that when installing git-crypt, you get a program named git-crypt, and also
 
 #### To unlock with a personal key
 
-Assumes you have your pgp key correctly configured on your local machine (see below) and your pgp key
-has been added to the crypted repo already
+Assumes you have your pgp key correctly configured on your local machine (see below) and your public key has been added to the repo by a follow collaborator.
 
 - Linux: `git crypt unlock`
 
 - Windows: `./git-crypt unlock`
   
   - If Powershell
-    - One method: Navigate to the project folder, hold down the Shift key and right-click the folder. The context menu will contain an entry, ‘Open PowerShell window here'.
+    
+    - Navigate to the project folder, hold down the Shift key and right-click the folder. The context menu will contain an entry, ‘Open PowerShell window here'.
       - then `./git-crypt unlock`
+  
   - If GitBash
-    - `./git-crypt unlock`
-      - if *Error: no GPG secret key available to unlock this repository.*
-        - then `gpg --import <path to private key file>`     
-          - example ```gpg --import C:/keys/secret_key.asc``` (make sure there's no spaces in the path)
+    
+    - Navigate to the project folder, right-click the folder. The context menu will contain an entry, ‘Git Bash Here'.
+      
+      - then`./git-crypt unlock`
         
-        - then `./git-crypt unlock`
+        - if *Error: no GPG secret key available to unlock this repository.*
+          
+          - then `gpg --import <path to private key file>`
+            
+            - example ```gpg --import C:/keys/secret_key.asc``` (make sure there's no spaces in the path)
+            
+            - then `./git-crypt unlock`
 
 #### To unlock a repo with a symmtric (or 'collaboration') key:
 
