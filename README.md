@@ -75,8 +75,10 @@ has been added to the crypted repo already
   - If GitBash
     - `./git-crypt unlock`
       - if *Error: no GPG secret key available to unlock this repository.*
-        - then `gpg --import <path to private key file>`
-          - then `./git-crypt unlock`
+        - then `gpg --import <path to private key file>`     
+          - example ```gpg --import C:/keys/secret_key.asc``` (make sure there's no spaces in the path)
+        
+        - then `./git-crypt unlock`
 
 #### To unlock a repo with a symmtric (or 'collaboration') key:
 
@@ -172,6 +174,7 @@ pgp keys can be bound to more than one email.You can add more emails to your exi
 ### Creating a Keyring
 
 - `gpg --no-default-keyring --keyring <NAMEOFKEYRING.gpg> --fingerprint`
+
 - `gpg --no-default-keyring --keyring <NAMEOFKEYRING.gpg> --import <path to key file>`
   
   <!--stackedit_data:
