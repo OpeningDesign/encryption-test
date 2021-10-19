@@ -70,12 +70,12 @@ Assumes you have your pgp key correctly configured on your local machine (see be
   
   - If Powershell
     
-    - Navigate to the project folder, hold down the Shift key and right-click the folder. The context menu will contain an entry, ‘Open PowerShell window here'.
+    - Navigate to the top level of the project folder (the level that has `git-crypt.exe` inside) hold down the Shift key and right-click the project folder. The context menu will contain an entry, ‘Open PowerShell window here'.
       - then `./git-crypt unlock`
   
   - If GitBash
     
-    - Navigate to the project folder, right-click the folder. The context menu will contain an entry, ‘Git Bash Here'.
+    - Navigate to the top level of the project folder (the level that has `git-crypt.exe` inside) right-click the project folder. The context menu will contain an entry, ‘Git Bash Here'.
       
       - then`./git-crypt unlock`
         
