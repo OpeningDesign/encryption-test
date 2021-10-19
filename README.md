@@ -150,7 +150,7 @@ If you are going to use that key to add the person to git-crypt, you need to rai
   * Choose **Create a personal OpenPGP key pair**
   * Enter Name and Email (use email address assocaited with Gitlab and Github accounts)
   * Review Parameters, and if okay, click **Create**.
-  * Create Passphase
+  * Create Passphase and write it down somewhere so you don't forget it. 
   * **Make a Backup Of Your Key Pair...**
     * Save this .asc file elsewhere.  This is your private key.  Don't share with anyone.
   * To share your public key with others, right click on your name/email in the list of key and go to **Export..** You can share this file with your collaborators.  If in doubt, open this file in a text editor, and it should say something like **-----BEGIN PGP PUBLIC KEY BLOCK-----**
