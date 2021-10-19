@@ -64,8 +64,6 @@ Note that when installing git-crypt, you get a program named git-crypt, and also
 
 Assumes you have your pgp key correctly configured on your local machine (see below) and your public key has been added to the repo by a follow collaborator.
 
-- Linux: `git crypt unlock`
-
 - Windows: `./git-crypt unlock`
   
   - If Powershell
@@ -86,6 +84,10 @@ Assumes you have your pgp key correctly configured on your local machine (see be
             - example ```gpg --import C:/keys/secret_key.asc``` (make sure there's no spaces in the path)
             
             - then `./git-crypt unlock`
+
+- Linux: `git crypt unlock`
+
+
 
 #### To unlock a repo with a symmtric (or 'collaboration') key:
 
