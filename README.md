@@ -65,12 +65,14 @@ Note that when installing git-crypt, you get a program named git-crypt, and also
 Assumes you have your pgp key correctly configured on your local machine (see below) and your public key has been added to the repo by a follow collaborator.
 
 - Windows: `./git-crypt unlock`
-  
+  - **Warning:** git-grypt might not work if you have any special character in your local repo path.
+    
   - If Powershell
     
     - Navigate to the top level of the project folder (the level that has `git-crypt.exe` inside) hold down the Shift key and right-click the project folder. The context menu will contain an entry, ‘Open PowerShell window here'.
       - then `./git-crypt unlock`
-  
+      
+        
   - If GitBash
     
     - Navigate to the top level of the project folder (the level that has `git-crypt.exe` inside) right-click the project folder. The context menu will contain an entry, ‘Git Bash Here'.
@@ -84,6 +86,19 @@ Assumes you have your pgp key correctly configured on your local machine (see be
             - example ```gpg --import C:/keys/secret_key.asc``` (make sure there's no spaces in the path)
             
             - then `./git-crypt unlock`
+            
+            - if the error persists, check if there are any special characters in your repo path. Try removing the special characters or cloning the repo in another path.
+
+          
+          - or `./git-crypt unlock path/to/secretkey.asc`
+            
+            - if *Error: path\secretkey.asc: not a valid git-crypt key file.*
+
+            - then check if there are any special characters in your repo path. Try removing the special characters or cloning the repo in another path.
+
+
+          
+            
 
 - Linux: `git crypt unlock`
 
